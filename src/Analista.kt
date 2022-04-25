@@ -1,15 +1,16 @@
 class Analista(
-    name: String,
+    nome: String,
     cpf: String,
-    salary: Double
-
+    salario: Double
 ) : Funcionario(
-    name = name,
+    nome = nome,
     cpf = cpf,
-    salary = salary
+    salario = salario
 ) {
-    override fun bonus(): Double{
-        return super.bonus() + salary * 0.1
-    }
+
+    override val bonificacao: Double
+        get() {
+            return salario * 0.1
+        }
 
 }

@@ -1,23 +1,19 @@
 class Diretor(
-    name: String,
+    nome: String,
     cpf: String,
-    salary: Double,
-    val senha: Int,
+    salario: Double,
+    senha: Int,
     val plr: Double
-
-) : Funcionario(
-    name = name,
+) : FuncionarioAdmin(
+    nome = nome,
     cpf = cpf,
-    salary = salary
+    salario = salario,
+    senha = senha
 ) {
-    override fun bonus(): Double{
-        return super.bonus() + salary + plr
-    }
 
-    fun autentica(senha: Int): Boolean{
-        if(this.senha == senha){
-            return true
+    override val bonificacao: Double
+        get() {
+            return salario + plr
         }
-        return false
-    }
+
 }

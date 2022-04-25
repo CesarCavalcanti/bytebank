@@ -1,7 +1,9 @@
-open class Funcionario(
-    val name: String,
+abstract class Funcionario(
+    val nome: String,
     val cpf: String,
-    val salary: Double
+    val salario: Double
 ){
-    open fun bonus(): Double = salary * 0.1
+    abstract val bonificacao: Double
+
+
 }
